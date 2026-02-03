@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#img1 {
+    background-image: url(https://www.cats.org.uk/media/13136/220325case013.jpg);
+    height: 100%;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#img2 {
+    background-image: url(https://www.cats.org.uk/media/13136/220325case013.jpg);
+    height: 100%;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#box {
+    background-color: black;
+    height: 100vh;
+}
+
+.text{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
