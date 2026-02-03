@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" id="leftValue" placeholder="Left Operand" min="0">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="rightValue" placeholder="Right Operand" min="0">
+        <input type="button" value="Try me!" id="calculateButton">
+    </div>
+
+    <script>
+        function calculate() {
+            const left = parseInt(document.getElementById('leftValue').value);
+            const right = parseInt(document.getElementById('rightValue').value);
+            const operator = document.getElementById('operator').value;
+
+            if (isNaN(left) || isNaN(right) || left < 0 || right < 0) {
+                alert('Error :(');
+                console.log('Error :(');
+                return;
+            }
+
+            if ((operator === '/' || operator === '%') && right === 0) {
+                alert("It’s over 9000!");
+                console.log("It’s over 9000!");
+                return;
+            }
+
+            let result;
+            switch (operator) {
+                case '+':
+                    result = left + right;
+                    break;
+                case '-':
+                    result = left - right;
+                    break;
+                case '*':
+                    result = left * right;
+                    break;
+                case '/':
+                    result = left / right;
+                    break;
+                case '%':
+                    result = left % right;
+                    break;
+            }
+            alert('Result: ' + result);
+            console.log('Result: ' + result);
+        }
+
+        document.getElementById('calculateButton').addEventListener('click', calculate);
+
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+    
+</body>
+</html>
